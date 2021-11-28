@@ -6,7 +6,7 @@ using UnityEngine;
 public class Audio : MonoBehaviour
 {
     AudioSource _audioSource;
-    public float[] _samples = new float[128];
+    public static float[] _samples = new float[128];
     // Start is called before the first frame update
     void Start()
     {
