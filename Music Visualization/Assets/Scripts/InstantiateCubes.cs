@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class InstantiateCubes : MonoBehaviour
 {
+    public GameObject _cubePrefab;
+    GameObject[] _cubes = new GameObject[128];
     // Start is called before the first frame update
     void Start()
     {
