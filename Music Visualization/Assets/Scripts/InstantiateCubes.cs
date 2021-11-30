@@ -27,11 +27,12 @@ public class InstantiateCubes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 128; i ++)
+        for (int i = 0; i < 64; i ++)
         {
-            if (_cubes[i] != null)
+            if (_cubes[i] != null && _cubes[i + 64] != null)
             {
                 _cubes[i].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
+                _cubes[i + 64].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
             }
         }
     }
