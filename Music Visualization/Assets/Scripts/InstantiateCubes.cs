@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class InstantiateCubes : MonoBehaviour
     public GameObject _cubePrefab;
     GameObject[] _cubes = new GameObject[128];
     public float _maxScale;
+    public float _rotateSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,9 @@ public class InstantiateCubes : MonoBehaviour
             {
                 _cubes[i].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
                 _cubes[i + 64].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
+
+                _cubes[i].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
+                _cubes[i + 64].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
             }
         }
     }
