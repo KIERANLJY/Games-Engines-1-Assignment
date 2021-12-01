@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cubePrefab: {fileID: 1166031518319306102, guid: d45d810754d3a67479302a3b0c4bbe5a, type: 3}
   _maxScale: 500
+  _rotateSpeed: 10
 --- !u!4 &298344582
 Transform:
   m_ObjectHideFlags: 0

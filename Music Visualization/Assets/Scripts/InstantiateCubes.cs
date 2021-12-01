@@ -6,9 +6,11 @@ using UnityEngine;
 public class InstantiateCubes : MonoBehaviour
 {
     public GameObject _cubePrefab;
-    GameObject[] _cubes = new GameObject[128];
+    GameObject[] _circleCubes = new GameObject[128];
     public float _maxScale;
     public float _rotateSpeed = 10;
+
+    GameObject[] _middleCubes = new GameObject[8];
 
     // Start is called before the first frame update
     void Start()
@@ -22,22 +24,25 @@ public class InstantiateCubes : MonoBehaviour
             _instanceCube.name = "Cube" + i;
             float angle = theta * i;
             _instanceCube.transform.position = new Vector3(Mathf.Sin(angle) * 100, 0, Mathf.Cos(angle) * 100);
-            _cubes[i] = _instanceCube;
+            _circleCubes[i] = _instanceCube;
+        }
+
+        for (int i = 0; i < 8; i ++)
+        {
+            
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 64; i ++)
+        for (int i = 0; i < 128; i ++)
         {
-            if (_cubes[i] != null && _cubes[i + 64] != null)
+            if (_circleCubes[i] != null)
             {
-                _cubes[i].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
-                _cubes[i + 64].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
+                _circleCubes[i].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
 
-                _cubes[i].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
-                _cubes[i + 64].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
+                _circleCubes[i].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
             }
         }
     }
