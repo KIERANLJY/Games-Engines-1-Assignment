@@ -56,7 +56,7 @@ public class InstantiateCubes : MonoBehaviour
         {
             if (_middleCubes[i] != null)
             {
-                _middleCubes[i].transform.localScale = new Vector3(20, (Audio._bandsBuffer[i] * 50), 20);
+                _middleCubes[i].transform.localScale = new Vector3(20, (Audio._bandsBuffer[i] * 30), 20);
             }
         }
     }

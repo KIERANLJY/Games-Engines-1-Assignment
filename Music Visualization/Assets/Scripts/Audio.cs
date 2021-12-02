@@ -7,10 +7,11 @@ public class Audio : MonoBehaviour
 {
     AudioSource _audioSource;
     public static float[] _samples = new float[512];
-    public static float[] _frequencyBands = new float[8];
+    float[] _frequencyBands = new float[8];
     public static float[] _bandsBuffer = new float[8];
     float[] _bufferDecrease = new float[8];
-
+    float[] _highestFreqBand = new float[8];
+    public static float[] _ratioBandsBuffer = new float[8];
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Audio : MonoBehaviour
         GetSpectrumAudioSource();
         GetFrequencyBands();
         GetBandsBuffer();
+        GetRatioBandsBuffer();
     }
 
     void GetSpectrumAudioSource()
@@ -66,7 +68,18 @@ public class Audio : MonoBehaviour
                 _bandsBuffer[i] -= _bufferDecrease[i];
                 _bufferDecrease[i] *= 1.5f;
             }
+        }
+    }
 
+    void GetRatioBandsBuffer()
+    {
+        for (int i = 0; i < 8; i ++)
+        {
+            if (_highestFreqBand[i] < _frequencyBands[i])
+            {
+                _highestFreqBand[i] = _frequencyBands[i];
+            }
+            _ratioBandsBuffer[i] = _bandsBuffer[i] / _highestFreqBand[i];
         }
     }
 }
