@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276ef9d2223169548bafe83a36773c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubePrefab: {fileID: 1166031518319306102, guid: d45d810754d3a67479302a3b0c4bbe5a, type: 3}
+  _cubePrefab: {fileID: 1759575623737216105, guid: 1346396f7ad9c374783d63189381408c, type: 3}
   _maxScale: 300
   _rotateSpeed: 2
 --- !u!4 &298344582
