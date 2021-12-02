@@ -15,15 +15,15 @@ public class InstantiateCubes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float theta = (2.0f * Mathf.PI) / (float)128;
+        float _theta = (2.0f * Mathf.PI) / (float)128;
         for (int i = 0; i < 128; i ++)
         {
             GameObject _instanceCube = (GameObject)Instantiate(_cubePrefab);
             _instanceCube.transform.position = this.transform.position;
             _instanceCube.transform.parent = this.transform;
             _instanceCube.name = "CircleCube" + i;
-            float angle = theta * i;
-            _instanceCube.transform.position = new Vector3(Mathf.Sin(angle) * 300, 0, Mathf.Cos(angle) * 300);
+            float _angle = _theta * i;
+            _instanceCube.transform.position = new Vector3(Mathf.Sin(_angle) * 300, 0, Mathf.Cos(_angle) * 300);
             _circleCubes[i] = _instanceCube;
         }
 
@@ -56,7 +56,7 @@ public class InstantiateCubes : MonoBehaviour
         {
             if (_middleCubes[i] != null)
             {
-                _middleCubes[i].transform.localScale = new Vector3(20, (Audio._samples[i * 16] * _maxScale), 20);
+                _middleCubes[i].transform.localScale = new Vector3(20, (Audio._frequencyBands[i] * 50), 20);
             }
         }
     }
