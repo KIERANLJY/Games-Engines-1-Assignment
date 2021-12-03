@@ -61,7 +61,7 @@ public class InstantiateCubes : MonoBehaviour
             {
                 _middleCubes[i].transform.localScale = new Vector3(20, (Audio._bandsBuffer[i] * 30), 20);
                 
-                Color _color = new Color(Audio._ratioBandsBuffer[i], Audio._ratioBandsBuffer[i], Audio._ratioBandsBuffer[i]);
+                Color _color = new Color(0, Audio._ratioBandsBuffer[i], 255);
                 _material[i].SetColor("_EmissionColor", _color);
             }
         }
