@@ -9,8 +9,8 @@ public class InstantiateCubes : MonoBehaviour
     GameObject[] _circleCubes = new GameObject[128];
     public float _maxScale;
     public float _rotateSpeed = 10;
-
     GameObject[] _middleCubes = new GameObject[8];
+    Material[] _material = new Material[8];
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,10 @@ public class InstantiateCubes : MonoBehaviour
             _instanceCube.name = "MiddleCube" + i;
             _instanceCube.transform.position = new Vector3((i * 30) - 105, 0, -200);
             _middleCubes[i] = _instanceCube;
+
+            _material[i] = _middleCubes[i].GetComponent<MeshRenderer>().materials[0];
         }
+        
     }
 
     // Update is called once per frame
@@ -57,6 +60,9 @@ public class InstantiateCubes : MonoBehaviour
             if (_middleCubes[i] != null)
             {
                 _middleCubes[i].transform.localScale = new Vector3(20, (Audio._bandsBuffer[i] * 30), 20);
+                
+                Color _color = new Color(Audio._ratioBandsBuffer[i], Audio._ratioBandsBuffer[i], Audio._ratioBandsBuffer[i]);
+                _material[i].SetColor("_EmissionColor", _color);
             }
         }
     }
