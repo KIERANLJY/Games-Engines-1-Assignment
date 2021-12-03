@@ -23,7 +23,7 @@ public class InstantiateCubes : MonoBehaviour
             _instanceCube.transform.parent = this.transform;
             _instanceCube.name = "CircleCube" + i;
             float _angle = _theta * i;
-            _instanceCube.transform.position = new Vector3(Mathf.Sin(_angle) * 300, 0, Mathf.Cos(_angle) * 300);
+            _instanceCube.transform.position = new Vector3(Mathf.Sin(_angle) * 30, 0, Mathf.Cos(_angle) * 30);
             _circleCubes[i] = _instanceCube;
         }
 
@@ -33,7 +33,7 @@ public class InstantiateCubes : MonoBehaviour
             _instanceCube.transform.position = this.transform.position;
             _instanceCube.transform.parent = this.transform;
             _instanceCube.name = "MiddleCube" + i;
-            _instanceCube.transform.position = new Vector3((i * 30) - 105, 0, -200);
+            _instanceCube.transform.position = new Vector3((i * 3) - 10.5f, 0, -20);
             _middleCubes[i] = _instanceCube;
 
             _material[i] = _middleCubes[i].GetComponent<MeshRenderer>().materials[0];
@@ -48,8 +48,8 @@ public class InstantiateCubes : MonoBehaviour
         {
             if (_circleCubes[i] != null && _circleCubes[i + 64] != null)
             {
-                _circleCubes[i].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
-                _circleCubes[i + 64].transform.localScale = new Vector3(2, (Audio._samples[i] * _maxScale) + 1, 2);
+                _circleCubes[i].transform.localScale = new Vector3(0.2f, (Audio._samples[i] * _maxScale) + 0.1f, 0.2f);
+                _circleCubes[i + 64].transform.localScale = new Vector3(0.2f, (Audio._samples[i] * _maxScale) + 0.1f, 0.2f);
                 _circleCubes[i].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
                 _circleCubes[i + 64].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
             }
@@ -59,7 +59,7 @@ public class InstantiateCubes : MonoBehaviour
         {
             if (_middleCubes[i] != null)
             {
-                _middleCubes[i].transform.localScale = new Vector3(20, (Audio._bandsBuffer[i] * 30), 20);
+                _middleCubes[i].transform.localScale = new Vector3(2, (Audio._bandsBuffer[i] * 30), 2);
                 
                 Color _color = new Color(0, Audio._ratioBandsBuffer[i], 255);
                 _material[i].SetColor("_EmissionColor", _color);

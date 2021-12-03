@@ -50,7 +50,7 @@ public class Audio : MonoBehaviour
                 _samplesCount ++;
             }
             float _averageSpectrum = _sumSpectrum / _samplesInFB;
-            _frequencyBands[i] = _averageSpectrum * 10;
+            _frequencyBands[i] = _averageSpectrum;
         }
     }
 
@@ -66,7 +66,7 @@ public class Audio : MonoBehaviour
             if (_bandsBuffer[i] > _frequencyBands[i])
             {
                 _bandsBuffer[i] -= _bufferDecrease[i];
-                _bufferDecrease[i] *= 1.5f;
+                _bufferDecrease[i] *= 1.1f;
             }
         }
     }
