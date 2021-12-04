@@ -46,11 +46,19 @@ public class Audio : MonoBehaviour
             float _sumSpectrum = 0;
             for (int j = 0; j < _samplesInFB; j ++)
             {
-                _sumSpectrum += _samples[_samplesCount];
+                _sumSpectrum += _samples[_samplesCount] * (_samplesCount + 1);
                 _samplesCount ++;
             }
             float _averageSpectrum = _sumSpectrum / _samplesInFB;
-            _frequencyBands[i] = _averageSpectrum;
+            if (i < 3)
+            {
+                _frequencyBands[i] = _averageSpectrum * 0.4f;
+            }
+            else
+            {
+                _frequencyBands[i] = _averageSpectrum * 0.2f;
+            }
+            
         }
     }
 

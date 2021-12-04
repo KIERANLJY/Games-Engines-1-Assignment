@@ -10,6 +10,8 @@ public class InstantiateStage : MonoBehaviour
     {
         GameObject _instanceStage = (GameObject)Instantiate(_stagePrefab);
         _instanceStage.transform.position = this.transform.position;
+        _instanceStage.transform.parent = this.transform;
+        _instanceStage.name = "Stage";
         _instanceStage.transform.localScale = new Vector3(61, 5, 61);
     }
 
