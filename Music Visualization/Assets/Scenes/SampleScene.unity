@@ -263,6 +263,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c38b489fa8fca489bbdbe5b506f9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &160855503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160855505}
+  - component: {fileID: 160855504}
+  m_Layer: 0
+  m_Name: InstantiateFloatingCubes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &160855504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160855503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c96129bd80fc0459ee594a7f286b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _floatingCubePrefab: {fileID: 5387160839087032197, guid: 0d6a40075fbd1f947aeeafd73f206ecb, type: 3}
+--- !u!4 &160855505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160855503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298344580
 GameObject:
   m_ObjectHideFlags: 0
