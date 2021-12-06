@@ -26,6 +26,13 @@ public class InstantiateFloatingCubes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < 64; i ++)
+        {
+            if (_floatingCubes[i] != null && _floatingCubes[i + 64] != null)
+            {
+                _floatingCubes[i].transform.position = new Vector3(_floatingCubes[i].transform.position.x, (Audio._samples[i] * 50), _floatingCubes[i].transform.position.z);
+                _floatingCubes[i + 64].transform.position = new Vector3(_floatingCubes[i + 64].transform.position.x, (Audio._samples[i] * 50), _floatingCubes[i + 64].transform.position.z);
+            }
+        }
     }
 }
