@@ -293,6 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _floatingCubePrefab: {fileID: 5387160839087032197, guid: 0d6a40075fbd1f947aeeafd73f206ecb, type: 3}
+  _maxScale: 50
+  _rotateSpeed: 2
 --- !u!4 &160855505
 Transform:
   m_ObjectHideFlags: 0

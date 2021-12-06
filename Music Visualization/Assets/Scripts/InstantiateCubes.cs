@@ -7,7 +7,7 @@ public class InstantiateCubes : MonoBehaviour
 {
     public GameObject _cubePrefab;
     GameObject[] _circleCubes = new GameObject[128];
-    public float _maxScale;
+    public float _maxScale = 50;
     public float _rotateSpeed = 10;
     GameObject[] _middleCubes = new GameObject[8];
     Material[] _material = new Material[8];

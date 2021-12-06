@@ -6,6 +6,9 @@ public class InstantiateFloatingCubes : MonoBehaviour
 {
     public GameObject _floatingCubePrefab;
     GameObject[] _floatingCubes = new GameObject[128];
+    public float _maxScale = 50;
+    public float _rotateSpeed = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +33,10 @@ public class InstantiateFloatingCubes : MonoBehaviour
         {
             if (_floatingCubes[i] != null && _floatingCubes[i + 64] != null)
             {
-                _floatingCubes[i].transform.position = new Vector3(_floatingCubes[i].transform.position.x, (Audio._samples[i] * 50), _floatingCubes[i].transform.position.z);
-                _floatingCubes[i + 64].transform.position = new Vector3(_floatingCubes[i + 64].transform.position.x, (Audio._samples[i] * 50), _floatingCubes[i + 64].transform.position.z);
+                _floatingCubes[i].transform.position = new Vector3(_floatingCubes[i].transform.position.x, (Audio._samples[i] * _maxScale), _floatingCubes[i].transform.position.z);
+                _floatingCubes[i + 64].transform.position = new Vector3(_floatingCubes[i + 64].transform.position.x, (Audio._samples[i] * _maxScale), _floatingCubes[i + 64].transform.position.z);
+                _floatingCubes[i].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
+                _floatingCubes[i + 64].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
             }
         }
     }
