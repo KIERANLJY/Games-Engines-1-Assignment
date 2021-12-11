@@ -8,7 +8,7 @@ public class InstantiateFloatingObj : MonoBehaviour
     public GameObject _circleSpherePrefab;
     GameObject _bodySphere;
     GameObject[] _circleSpheres = new GameObject[8];
-    public float _rotateSpeed = 10;
+    public float _rotateSpeed;
     Material[] _material = new Material[8];
 
 
