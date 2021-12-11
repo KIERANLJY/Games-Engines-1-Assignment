@@ -28,7 +28,12 @@ public class Audio : MonoBehaviour
         GetFrequencyBands();
         GetBandsBuffer();
         GetRatioBandsBuffer();
-        GetRatioAmplitude();
+        GetRatioAmplitudeBuffer();
+        
+        if(float.IsNaN(_ratioAmplitudeBuffer))
+        {
+            _ratioAmplitudeBuffer = 0f;
+        }
     }
 
     void GetSpectrumAudioSource()
@@ -95,7 +100,7 @@ public class Audio : MonoBehaviour
         }
     }
 
-    void GetRatioAmplitude()
+    void GetRatioAmplitudeBuffer()
     {
         float _amplitude = 0;
         float _amplitudeBuffer = 0;
@@ -108,6 +113,6 @@ public class Audio : MonoBehaviour
         {
             _highestAmplitude = _amplitude;
         }
-        _ratioAmplitudeBuffer = _amplitudeBuffer / _highestAmplitude;
+        _ratioAmplitudeBuffer = Mathf.Clamp01(_amplitudeBuffer / _highestAmplitude);
     }
 }
