@@ -8,6 +8,7 @@ public class InstantiateFloatingObj : MonoBehaviour
     public GameObject _circleSpherePrefab;
     GameObject _bodySphere;
     GameObject[] _circleSpheres = new GameObject[8];
+    public float _rotateSpeed = 10;
     Material[] _material = new Material[8];
 
 
@@ -38,12 +39,15 @@ public class InstantiateFloatingObj : MonoBehaviour
     void Update()
     {
         _bodySphere.transform.localScale = new Vector3((Audio._ratioAmplitudeBuffer + 1) * 5, (Audio._ratioAmplitudeBuffer + 1) * 5, (Audio._ratioAmplitudeBuffer + 1) * 5);
+        
         for (int i = 0; i < 8; i ++)
         {
             if (_circleSpheres[i] != null)
             {
                 _circleSpheres[i].transform.localScale = new Vector3((Audio._ratioAmplitudeBuffer + 1) * 2, (Audio._ratioAmplitudeBuffer + 1) * 2, (Audio._ratioAmplitudeBuffer + 1) * 2);
-                
+
+                _circleSpheres[i].transform.RotateAround(this.transform.position, Vector3.forward, _rotateSpeed * Time.deltaTime);
+
                 Color _color = new Color(0.2f + 0.8f * Audio._ratioAmplitudeBuffer, 0, 0.4f + 0.6f * Audio._ratioAmplitudeBuffer);
                 _material[i].SetColor("_EmissionColor", _color);
             }
