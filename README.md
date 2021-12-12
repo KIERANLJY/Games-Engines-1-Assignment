@@ -25,3 +25,15 @@ The project contains several sections.  In the middle of the scene, there are 12
 | InstantiateFloatingObj.cs | Self written |
 | MainLight.cs | Self written |
 | FloatingLight.cs | Self written |
+
+# References
+1. https://www.youtube.com/watch?v=_ojeeuNtJM8
+2. https://www.youtube.com/watch?v=4Av788P9stk&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo
+3. https://www.youtube.com/watch?v=mHk3ZiKNH48&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo
+4. https://docs.unity3d.com/560/Documentation/Manual/HOWTO-UseSkybox.html
+5. https://learn.unity.com/tutorial/introduction-to-particle-systems#
+
+# What I am most proud of in the assignment
+
+
+
