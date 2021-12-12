@@ -16,4 +16,12 @@ The project contains several sections.  In the middle of the scene, there are 12
 
 
 # List of classes/assets in the project
-
+| Class/assets | Source |
+| --- | --- |
+| Audio.cs | Modified from [reference](https://www.youtube.com/watch?v=4Av788P9stk&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo) |
+| InstantiateStage.cs | Self written |
+| InstantiateCircleCubes.cs | Self written |
+| InstantiateMiddleCubes.cs | Modified from [reference](https://www.youtube.com/watch?v=mHk3ZiKNH48&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo) |
+| InstantiateFloatingObj.cs | Self written |
+| MainLight.cs | Self written |
+| FloatingLight.cs | Self written |
