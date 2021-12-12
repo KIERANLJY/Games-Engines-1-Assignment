@@ -13,6 +13,7 @@ public class InstantiateCircleCubes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Instantiate 128 cubes in a circle
         float _theta = (2.0f * Mathf.PI) / (float)128;
         for (int i = 0; i < 128; i ++)
         {
@@ -20,6 +21,7 @@ public class InstantiateCircleCubes : MonoBehaviour
             _instanceCube.transform.position = this.transform.position;
             _instanceCube.transform.parent = this.transform;
             _instanceCube.name = "CircleCube" + i;
+            // Calculate positions of cubes by their angles 
             float _angle = _theta * i;
             _instanceCube.transform.position = new Vector3(Mathf.Sin(_angle) * 30, 0, Mathf.Cos(_angle) * 30);
             _circleCubes[i] = _instanceCube;
@@ -29,12 +31,15 @@ public class InstantiateCircleCubes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Make the cubes move according to samples of the audio source
         for (int i = 0; i < 64; i ++)
         {
             if (_circleCubes[i] != null && _circleCubes[i + 64] != null)
             {
+                // Change heights of the cubes according to samples
                 _circleCubes[i].transform.localScale = new Vector3(0.2f, (Audio._samples[i] * _maxScale) + 0.1f, 0.2f);
                 _circleCubes[i + 64].transform.localScale = new Vector3(0.2f, (Audio._samples[i] * _maxScale) + 0.1f, 0.2f);
+                // Rotate the cubes around the center of the circle
                 _circleCubes[i].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
                 _circleCubes[i + 64].transform.RotateAround(this.transform.position, Vector3.up, _rotateSpeed * Time.deltaTime);
             }

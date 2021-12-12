@@ -8,6 +8,7 @@ public class InstantiateStage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Instantiate the stage
         GameObject _instanceStage = (GameObject)Instantiate(_stagePrefab);
         _instanceStage.transform.position = this.transform.position;
         _instanceStage.transform.parent = this.transform;

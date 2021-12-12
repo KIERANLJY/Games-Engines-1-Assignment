@@ -16,6 +16,7 @@ public class FloatingLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Change intensity of the light according to amplitude of the audio source
         _light.intensity = Audio._ratioAmplitudeBuffer;
     }
 }
