@@ -89,3 +89,6 @@ In addition to the code part, I also did something else to implement the project
 The part that I am most proud of the project is the cubes in the middle part.  The 8 cubes can move and also change color according to frequency bands of the music.  It is also a little bit tricky to calculate the values of bands based on 512 samples and adjust the values to make it look better.
 
 
+
+Youtube video link: https://youtu.be/lsN_yk4Oh3s
+
