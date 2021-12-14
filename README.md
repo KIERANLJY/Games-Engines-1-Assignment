@@ -90,5 +90,6 @@ The part that I am most proud of the project is the cubes in the middle part.  T
 
 
 
-Youtube video link: https://youtu.be/lsN_yk4Oh3s
+# Youtube video of the assignment
+https://youtu.be/lsN_yk4Oh3s
 
